@@ -1,0 +1,4 @@
+{
+  "port" : 5000,
+  "database" : "mongodb+srv://iceandrise:viven333@cluster0.vddl2.mongodb.net/jewerly?retryWrites=true&w=majority"
+}
