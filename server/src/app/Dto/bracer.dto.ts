@@ -2,6 +2,9 @@ import { IsNotEmpty } from 'class-validator';
 
 export class BracerDto {
   @IsNotEmpty()
+  img : string
+
+  @IsNotEmpty()
   number : string
 
   @IsNotEmpty()
@@ -12,5 +15,8 @@ export class BracerDto {
 
   @IsNotEmpty()
   material : string
+
+  @IsNotEmpty()
+  type : string
 
 }

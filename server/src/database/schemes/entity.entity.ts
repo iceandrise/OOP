@@ -2,10 +2,13 @@ import { Prop, SchemaFactory, Schema } from "@nestjs/mongoose";
 import { Document } from "mongoose";
 
 
-export type BracersDocument = Bracers & Document
+export type ModelDocument = Entity & Document
 
 @Schema()
-export class Bracers {
+export class Entity {
+  @Prop()
+  img: string
+
   @Prop()
   number: string
 
@@ -17,6 +20,9 @@ export class Bracers {
 
   @Prop()
   price: number
+
+  @Prop()
+  type: string
 }
 
-export const BracersSchema = SchemaFactory.createForClass(Bracers)
+export const EntitySchema = SchemaFactory.createForClass(Entity)
