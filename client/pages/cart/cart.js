@@ -1,48 +1,64 @@
-let dataArray=[];
-$(document).ready(() => {
-  
-  httpHook('/get/кольцо', 'GET')
- .then(data => {
-  dataArray=data
-  console.log(data)
-  for (let bracer of data){
-    $(".box-item").append(makeForm(bracer));
-  }})
-})
+let items = [];
+let filtered = [];
 
+const drawItems = () => {
+  $('.box-item').empty();
 
+  !!items?.length
+    ? items.map((item) => {
+        const node = $(`
+      <div class="items-element-wrapper">
+        <div class="items-element">
+          <span class="items-element__name">${item.number}</span>
+          <img class="items-element__img" src="${item.img}" />
+          <span class="cena">    скидка -30%  до 1 мая 2021</span>
+          <br>
+          <span class="items-element__price">
+            ${item.price} бел.руб
+          </span>
+          <br>
+          <span class="items-element__weight">
+            Вес: ${item.weight} гр
+          </span>
+          <br>
+          <span class="items-element__material">
+            Материал: ${item.material}
+          </span>
+        </div>
+      </div>
+    `);
 
-const makeForm=(data)=>{
-  // let status;
-  // if (data.bracer < 10) {
-  //   status = "bracelets";
-  // }
+        $('.box-item').append(node);
 
-  
-  return ` <li class="items-element">
- 
-  <span class="items-element__name">${data.number}</span>
-
-  <img class="items-element__img" src="${data.img}" />
-  <span class="cena">    скидка -30%  до 1 мая 2021</span>
-
-  <span class="items-element__price">
-  ${data.price} бел.руб</span>
-
-  <span class="items-element__weight">
-  Вес:
-  ${data.weight}
-  гр
-  </span>
-
-  <span class="items-element__material">
-
-       Материал: 
-  ${data.material}</span>
- </li>`;
- 
-  
-
-
+        return { ...item, node };
+      })
+    : $('.box-item').append('В корзине нет товаров');
 };
-  
+
+const submitPromo = async () => {
+  const token = $('#promo').val();
+  try {
+    const discount = await httpHook('/discount', 'POST', JSON.stringify({ token }));
+    alert('Промокод применен!');
+    items = items.map(item => ({ ...item, price: item.price - (item.price * Number(discount)) }));
+    drawItems();
+  }
+  catch(e) {
+    alert(e.responseJSON.message)
+  }
+}
+
+$(document).ready(async () => {
+  items = JSON.parse(localStorage.getItem('cart'));
+  drawItems();
+
+  $('#clear_cart').click(() => {
+    localStorage.removeItem('cart');
+    items = [];
+    drawItems();
+  });
+
+  $('#submit_promo').click(submitPromo);
+
+  $('#secret').click(() => alert('secret!'));
+});
