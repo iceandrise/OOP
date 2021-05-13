@@ -1,14 +1,16 @@
+body {
+  font-family: sans-serif;
+}
+
 .logo {
     width: 250px
 }
 .nav-link{
-   background-color: azure;
   
    margin: 10px;
 }
 .nav-item{
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
 }
 .img-home{
     width: 800px;
@@ -20,7 +22,6 @@
 
         font-size: 40px;
         line-height: 50px;
-        font-family:'Times New Roman', Times, serif;
         font-weight: 900;
         position: relative;
         background: white;
@@ -55,9 +56,7 @@
 }
 .text2{
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
 }
 .text3{
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
 }

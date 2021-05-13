@@ -9,6 +9,7 @@
   <title>Cart</title>
 </head>
 <body>
+  <div class="secret" id="secret"></div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="../../index.html">
@@ -26,29 +27,39 @@
             <a class="nav-link active" aria-current="page" href="../catalog/catalog.html">Каталог</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../bracers/bracelets.html">Браслеты</a>
+            <a class="nav-link active" aria-current="page" href="../catalog/catalog.html?type=браслет">Браслеты</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../broches/broches.html">Броши</a>
+            <a class="nav-link active" aria-current="page" href="../catalog/catalog.html?type=брошь">Броши</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../rings/rings.html">Кольца</a>
+            <a class="nav-link active" aria-current="page" href="../catalog/catalog.html?type=кольцо">Кольца</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../earrings/earrings.html">Серьги</a>
+            <a class="nav-link active" aria-current="page" href="../catalog/catalog.html?type=серьги">Серьги</a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../cart/cart.html">Корзина</a>
-          </li> -->
+          </li>
         </ul>
       </div>
     </div>
   </nav>
    
-  
+  <input placeholder="promo" class="promo-box" id="promo" />
+  <div class ="sort-box"> 
+    <div class="sort-box__field" id="submit_promo">
+      Прменить промокод
+    </div>
+  </div>
+  <div class="sort-box">
+    <div class="sort-box__field" id="clear_cart">
+      Очистить корзину
+    </div>
+  </div>
 
-  <ul class="box-item"> 
-  </ul>
+  <div class="box-item"> 
+  </div>
 
   <script src='../../hooks/http.hook.js'></script>
   <script src="cart.js"></script>

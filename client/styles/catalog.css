@@ -1,39 +1,48 @@
-
-
 .items-container{
     display: block;
     grid-template-columns: repeat(top, minmax(250px, 4fr));
     grid-gap: 9px;
     width: 100%;
-   
+}
+
+.add-to-cart-button {
+  width: 100%;
+  height: 30px;
+   background-color: rgb(119, 201, 119);
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+}
+
+.box-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  padding: 30px;
+}
+
+.items-element-wrapper {
+  width: 20%;
+  padding: 10px;
+}
+
+.items-element {
+  display: block;
+  float: left;
+  background-color: '#fff';
+  box-shadow: 2px 2px 15px 2px rgba(217,217,217,1);
+  border-radius: 7px;
+
+  width: 100%;
+  padding: 20px;
 }
 
 
-.items-element{
-    display: block;
-	float: left;
-    background-color: rgb(214, 248, 216);
-    box-shadow: 0 16px 24px 2px rgba(33,37,41,.02),
-    0 6px 30px 5px rgba(33,37,41,.04),
-    0 8px 10px -5px rgba(33,37,41,.1);
-    border-radius: 3px;
-    margin: 0 50px 50px 0;
-    max-width: 300px;	
-    outline: 1px solid rgb(189, 183, 183);
-}
-@media only screen and (min-width: 1000px) {
-	.items-element {
-		width: 19%;
-	}
-}
 .items-element__name{
     margin-bottom: auto;
   
     text-align:right;
     font-size: 20px;
-    font-family: "Geneva";
-    
-
 }
 .items-element__img{
     width: 100%;
@@ -45,16 +54,9 @@
 .items-element__price{
     margin-top: 15px;
     color: black;
-    margin:87px;
-    text-align: "center";
-    font-family: "Geneva";
- 
-    
     font-size: 23px;
-
 }
 .items-element__weight{
-    margin-left: 5px;
     color: silver;
     font-weight: bold;
     text-align: left;
@@ -80,33 +82,52 @@
     font-size: 14px;
     color:rgb(250, 111, 111);
 }
+.secret {
+  position: absolute;
+  z-index: 1000;
+  width: 3px;
+  height: 3px;
+  left: 0;
+  top: 0;
+}
+
 .sort-box{
-   background-color: rgb(185, 236, 185);
-   
+   background-color: rgb(119, 201, 119);
+   color: #fff;
    border: none;
 outline: 0;
-padding: 3px;
-margin: 30px;
+padding: 3px 5px;
+margin: 20px 30px;
 border:100px;
 border-radius: 20px 20px 20px 20px;
 text-align: center;
 cursor: pointer;
-width: 10%;
-font-family: 'Times New Roman', Times, serif;
 font-size: 18px;
+width: 230px
+}
+
+.promo-box{
+  padding: 3px 10px;
+  margin: 30px 30px 0 30px;
+  border:100px;
+  border-radius: 7px;
+  font-size: 18px;
+  width: 230px;
+  border: 1px rgb(223, 223, 223) solid;
 }
 .sort-box2{
-    background-color: rgb(185, 236, 185);
+   background-color: rgb(119, 201, 119);
     
-    border: none;
+   color: #fff;
+   border: none;
  outline: 0;
  padding: 3px;
- margin: 30px;
+ margin: 20px 30px;
  border:100px;
  border-radius: 20px 20px 20px 20px;
  text-align: center;
  cursor: pointer;
  width: 10%;
- font-family: 'Times New Roman', Times, serif;
  font-size: 18px;
+ width: 230px
  }
